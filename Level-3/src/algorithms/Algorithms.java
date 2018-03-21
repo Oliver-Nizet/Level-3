@@ -1,5 +1,7 @@
-package algorithm;
+package algorithms;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Algorithms {
@@ -49,8 +51,30 @@ public class Algorithms {
 		return x;
 	}
 
-	public static List<String> sortScores(List<Double> results) {
+	public static List<Double> sortScores(List<Double> results) {
+		Collections.sort(results);
+		return results;
+	}
 
-		return null;
+	public static Object sortDNA(List<String> unsortedSequences) {
+		Comparator<String> lengthComparator = getLengthComparator();
+		Collections.sort(unsortedSequences, lengthComparator);
+		return unsortedSequences;
+	}
+
+	private static Comparator<String> getLengthComparator() {
+		return new MyLengthComparator();
+	}
+
+	public static class MyLengthComparator implements Comparator<String> {
+		@Override
+		public int compare(String o1, String o2) {
+			return Integer.compare(o1.length(), o2.length());
+		}
+	}
+
+	public static List<String> sortWords(List<String> words) {
+		Collections.sort(words);
+		return words;
 	}
 }
