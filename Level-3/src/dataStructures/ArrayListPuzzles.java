@@ -19,7 +19,7 @@ public class ArrayListPuzzles {
 		System.out.println(joke.get(j) + "\n --- " + punchline.get(j) + "\n");
 		int a = r.nextInt(adjective.size());
 		int n = r.nextInt(noun.size());
-		System.out.println("Your brand name is " + adjective.get(a) + " " + noun.get(n) + ".");
+		System.out.println("Your brand name is " + adjective.get(a) + " " + noun.get(n) + ".\n");
 		System.out.println(overload);
 	}
 
