@@ -13,8 +13,18 @@ public class Plane {
 		}
 	}
 
+	public static void main(String[] args) {
+		Plane plane = new Plane();
+		System.out.println(plane.totalVenom());
+	}
+
 	public int totalVenom() {
 		int venom = 0;
+		for (int i = 0; i < snakes.size(); i++) {
+			if (snakes.get(i).isVenomous()) {
+				venom += snakes.get(i).getViciousness();
+			}
+		}
 		return venom;
 	}
 }
